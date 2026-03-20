@@ -46,7 +46,7 @@ export default function Home() {
         body: formData,
       });
 
-      const data = await response.json();
+      const data = await response.json() as { analysis: string };
       setResult(data.analysis);
       setStep(2);
     } catch (error) {
