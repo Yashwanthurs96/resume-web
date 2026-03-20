@@ -40,22 +40,31 @@ export default function Home() {
     const formData = new FormData();
     formData.append("file", file);
 
+    // --- SMART URL LOGIC ---
+    // If you are on localhost, use the local Python server. 
+    // If you are on the internet, use the Render server.
+    const backendUrl = window.location.hostname === "localhost" 
+      ? "http://localhost:8000/analyze" 
+      : "https://ats-brain.onrender.com/analyze";
+
     try {
-      const response = await fetch("https://ats-brain.onrender.com/analyze", {
+      const response = await fetch(backendUrl, {
         method: "POST",
         body: formData,
       });
 
-      const data = await response.json() as { analysis: string };
+      if (!response.ok) throw new Error("Server responded with an error");
+
+      const data = await response.json();
       setResult(data.analysis);
       setStep(2);
     } catch (error) {
-      alert("Error connecting to Python server. Is it running?");
+      console.error(error);
+      alert("Error connecting to Python server. Make sure your backend is running!");
     }
 
     setLoading(false);
   };
-
   const handleReset = () => {
     setFile(null);
     setResult("");
