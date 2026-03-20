@@ -164,8 +164,15 @@ export default function Home() {
                       h3: ({node, ...props}) => <h3 className="text-2xl font-bold text-white mt-16 mb-8 flex items-center gap-3" {...props} />,
                       strong: ({node, ...props}) => <strong className="font-bold text-white bg-white/10 px-1.5 py-0.5 rounded-md" {...props} />,
                       ul: ({node, ...props}) => <ul className="grid grid-cols-1 gap-4 mb-10 mt-6" {...props} />,
-                      li: ({node, ...props}) => (
-                        <motion.li initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} className="bg-black/40 p-6 md:p-8 rounded-2xl border border-white/5 hover:border-white/15 transition-colors shadow-lg leading-relaxed text-slate-300 flex flex-col gap-2" {...props} />
+                      li: ({ children }) => (
+                        <motion.li 
+                          initial={{ opacity: 0, x: -20 }} 
+                          animate={{ opacity: 1, x: 0 }} 
+                          transition={{ duration: 0.5 }} 
+                          className="bg-black/40 p-6 md:p-8 rounded-2xl border border-white/5 hover:border-white/15 transition-colors shadow-lg leading-relaxed text-slate-300 flex flex-col gap-2"
+                        >
+                          {children}
+                        </motion.li>
                       ),
                       p: ({node, ...props}) => <p className="mb-6 text-slate-400 text-[1.1rem] leading-loose max-w-4xl" {...props} />
                     }}
