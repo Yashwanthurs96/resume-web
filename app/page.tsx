@@ -41,7 +41,7 @@ export default function Home() {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/analyze", {
+      const response = await fetch("https://ats-brain.onrender.com/analyze", {
         method: "POST",
         body: formData,
       });
