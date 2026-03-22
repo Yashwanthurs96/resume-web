@@ -97,9 +97,10 @@ export default function Home() {
                 
                 {/* 👉 CHANGE YOUR PROJECT NAME HERE 👈 */}
                 <h1 className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white via-slate-200 to-slate-500 tracking-tight">
-                  AI Resume Pro
+                  AI Resume Analyzer
                 </h1>
-                <p className="text-slate-400 text-lg max-w-lg mx-auto">Upload a resume and let our machine learning pipeline generate a comprehensive HR evaluation in seconds.</p>
+                <p className="text-slate-300 text-lg max-w-lg mx-auto">Wanna know how good is your resume?</p>
+                  <p className="text-slate-400 text-lg max-w-lg mx-auto">Then Upload your resume and let our machine learning pipeline generate a comprehensive HR evaluation in seconds.</p>
               </div>
 
               <div className="bg-[#18181b]/80 backdrop-blur-2xl p-2 rounded-[2rem] shadow-2xl border border-white/5 ring-1 ring-white/10">
